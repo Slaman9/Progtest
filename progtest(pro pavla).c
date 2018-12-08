@@ -173,4 +173,6 @@ int main(void)
 	tuPlusTuIsFor(dalnice, zacatek, konec, i);
 	free(dalnice);
 	return 0;
+	
+	
 }
