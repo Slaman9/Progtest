@@ -36,7 +36,6 @@ void tuPlusTuIsFor(Usek *dalnice, int zacatek, int konec, int i)
 		{
 			poplatky[k] = dalnice[j].tax[k] * kilometry;
 		}
-	
 	}
 	for (j = 0; j <= i; j++)	//spocita poplatky od 0 do konce cesty
 	{
@@ -52,9 +51,10 @@ void tuPlusTuIsFor(Usek *dalnice, int zacatek, int konec, int i)
 		{
 			for (k = 0; k < 26; k++)
 			{
-				poplatkyK[k] = poplatkyK[k] + (dalnice[j].tax[k] * (tmpLen - konec));
+				kilometry = tmpLen - konec;
+				poplatkyK[k] = poplatkyK[k] + (dalnice[j].tax[k] * kilometry);
 			}
-
+			break;
 		}
 	}
 	tmpLen = 0;
@@ -72,8 +72,10 @@ void tuPlusTuIsFor(Usek *dalnice, int zacatek, int konec, int i)
 		{
 			for (k = 0; k < 26; k++)
 			{
-				poplatkyZ[k] = poplatkyZ[k] + (dalnice[j].tax[k] * (tmpLen - zacatek));
+				kilometry = tmpLen - zacatek;
+				poplatkyZ[k] = poplatkyZ[k] + (dalnice[j].tax[k] * kilometry);
 			}
+			break;
 		}
 	}
 	for (k = 0; k < 26; k++) // spocita finalni cenu
